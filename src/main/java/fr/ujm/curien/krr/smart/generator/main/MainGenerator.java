@@ -1,4 +1,4 @@
-package fr.ujm.curien.krr.smart.generator.dispatcher;
+package fr.ujm.curien.krr.smart.generator.main;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -14,7 +14,7 @@ import fr.ujm.curien.krr.smart.generator.beans.Generation;
 import fr.ujm.curien.krr.smart.generator.beans.Power;
 import fr.ujm.curien.krr.smart.generator.parser.Parser;
 
-public class Dispatcher {
+public class MainGenerator {
 
 	public static void main(String[] args) throws IOException, URISyntaxException {
 
@@ -25,9 +25,13 @@ public class Dispatcher {
 		int p3 = Integer.parseInt(args[2]);
 		int p4 = Integer.parseInt(args[3]);
 
+		String  environmental_Folder= args[4];
+		String  generation_Folder= args[4];
+		String  power_Folder= args[4];
+		
 		Parser parser = new Parser();
 		
-		File environmentalFolder = new File(args[4]+"homeC-environmental/");
+		File environmentalFolder = new File(environmental_Folder);
 		File[] listOfFiles = environmentalFolder.listFiles();
 		File fileEnvironmental = new File("environmental.nt");
 
@@ -63,7 +67,7 @@ public class Dispatcher {
 
 	//	URI uri2 = classLoader.getResource(args[5]+"homeC-generation").toURI();
 
-		File generatinFolder = new File(args[4]+"homeC-generation/");
+		File generatinFolder = new File(generation_Folder);
 		listOfFiles = generatinFolder.listFiles();
 		File fileGeneration = new File("generation.nt");
 		// if file doesnt exists, then create it
@@ -98,7 +102,7 @@ public class Dispatcher {
 
 		System.out.println("Done for geneartion");
 
-		File powerFolder = new File(args[4]+"homeC-power/");
+		File powerFolder = new File(power_Folder);
 		listOfFiles = powerFolder.listFiles();
 		File filePower = new File("power.nt");
 		
