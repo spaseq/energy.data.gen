@@ -1,1 +1,1 @@
-# stock.data.gen
+# energy.data.gen
