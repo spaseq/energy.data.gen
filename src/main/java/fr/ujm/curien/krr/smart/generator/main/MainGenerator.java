@@ -26,8 +26,8 @@ public class MainGenerator {
 		int p4 = Integer.parseInt(args[3]);
 
 		String  environmental_Folder= args[4];
-		String  generation_Folder= args[4];
-		String  power_Folder= args[4];
+		String  generation_Folder= args[5];
+		String  power_Folder= args[6];
 		
 		Parser parser = new Parser();
 		
